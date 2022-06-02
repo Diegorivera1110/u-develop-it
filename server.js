@@ -15,7 +15,7 @@ const db = mysql.createConnection(
     {
         host: 'localhost',
         // Your MySQL username
-        user: 'localhost',
+        user: 'root',
         password: 'Cisco007.',
         database: 'election'
     },
@@ -23,9 +23,39 @@ const db = mysql.createConnection(
     );
     
     
-    db.query(`SELECT * FROM candidates`, (err, rows) => {
-        console.log(rows);
-    });
+    // db.query(`SELECT * FROM candidates`, (err, rows) => {
+    //     console.log(rows);
+    // });
+
+//     // GET a single candidate
+//     db.query(`SELECT * FROM candidates WHERE id = 1`, (err, row) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log(row);
+//     });
+
+//     // DELETE a candidate
+//     db.query(`DELETE FROM candidates WHERE id - ?`, 1, (err, result) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         console.log(result);
+//     });
+
+
+//     // Create a candidate
+// const sql = `INSERT INTO candidates (id, first_name, last_name, industry_connected) 
+// VALUES (?,?,?,?)`;
+// const params = [1, 'Ronald', 'Firbank', 1];
+
+// db.query(sql, params, (err, result) => {
+// if (err) {
+// console.log(err);
+// }
+// console.log(result);
+// });
+
 
 // Deafualt response for any other request (Not found)
 app.use((req, res) => {
